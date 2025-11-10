@@ -1,6 +1,6 @@
 package src;
-import java.util.Scanner;
 import java.util.ArrayList;
+import java.util.Scanner;
 
 public class Main {
     public static void main (String[] args) {
@@ -37,8 +37,17 @@ public class Main {
                     
                 break;
                 case 3 :
-                    System.out.println("Keluar dari program");
-                break;
+                    in.nextLine();
+                    System.out.print("Ketik jenis kendaraan yang ingin Anda cari (Mobil/Motor/Truk/Bemo/Bus): "); String cari = in.nextLine();
+                    System.out.println("\n--- Kendaraan Tersedia (" + cari + ") ---");
+                    for (kendaraan k : inventaris) {
+                        if (k.isTersedia() && k.getClass().getSimpleName().equalsIgnoreCase(cari)) {
+                            k.tampilkanDetail();
+                        }else{
+                            System.out.println("Jenis/Data kendaraan tidak tersedia!");
+                        }
+                    }
+                    break;
             }
         } while (opsi != 0);
     }
