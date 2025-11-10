@@ -24,14 +24,17 @@ public class Main {
             System.out.println("2. Hitung biaya untuk kendaraan tertentu");
             System.out.println("3. Cari kendaraan tersedia berdasarkan jenis");
             System.out.println("0. Keluar");
-            
+            System.out.print("Masukkan pilihan : ");
             opsi = in.nextInt();
+
             switch (opsi){
                 case 0 :
                     System.out.println("Keluar dari program");
                 break;
                 case 1 :
-                    
+                    for (int i=0; i<7; i++) {
+                        System.out.println(inventaris);
+                    }
                 break;
                 case 2 :
                     
