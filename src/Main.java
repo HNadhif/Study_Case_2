@@ -71,13 +71,20 @@ public class Main {
 
                 case 3 :
                     in.nextLine();
+                    boolean ditemukan = false;
                     System.out.print("Ketik jenis kendaraan yang ingin Anda cari (Mobil/Motor/Truk/Bemo/Bus): "); String cari = in.nextLine();
                     System.out.println("\n--- Kendaraan Tersedia (" + cari + ") ---");
                     for (kendaraan k : inventaris) {
                         if (k.isTersedia() && k.getClass().getSimpleName().equalsIgnoreCase(cari)) {
                             k.tampilkanDetail();
+                            ditemukan = true;
                         }
                     }
+
+                    if (!ditemukan) {
+                        System.out.println("Kendaraan yang anda pilih sedang kosong!");
+                    }
+
                     System.out.println();
                     break;
             }
