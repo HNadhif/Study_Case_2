@@ -17,5 +17,29 @@ public class Main {
         kendaraan B1 = new bemo("B-001", "Hyundai", 10000, true, 300);
         kendaraan BS_1 = new Bus("Bus-0001", "Nisan", 750000, true, true);
 
+        int opsi = 0;
+        do {
+            System.out.println("Menu Persewaan Kendaraan");
+            System.out.println("1. Tampilkan semua kendaraan");
+            System.out.println("2. Hitung biaya untuk kendaraan tertentu");
+            System.out.println("3. Cari kendaraan tersedia berdasarkan jenis");
+            System.out.println("0. Keluar");
+            
+            opsi = in.nextInt();
+            switch (opsi){
+                case 0 :
+                    System.out.println("Keluar dari program");
+                break;
+                case 1 :
+                    
+                break;
+                case 2 :
+                    
+                break;
+                case 3 :
+                    System.out.println("Keluar dari program");
+                break;
+            }
+        } while (opsi != 0);
     }
 }
