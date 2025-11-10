@@ -32,12 +32,28 @@ public class Main {
             System.out.println("2. Hitung biaya untuk kendaraan tertentu");
             System.out.println("3. Cari kendaraan tersedia berdasarkan jenis");
             System.out.println("0. Keluar");
-            
+            System.out.print("Masukkan pilihan : ");
             opsi = in.nextInt();
+
             switch (opsi){
-                
+                case 0 :
+                     System.out.println("Terima kasih! Program selesai.");
+                    break;
                 case 1 :
-                break;
+                ArrayList<String> printKendaraan = new ArrayList<>();
+                printKendaraan.add("Mobil");
+                printKendaraan.add("Motor");
+                printKendaraan.add("Truk");
+                printKendaraan.add("Bemo");
+                printKendaraan.add("Bus");
+
+                System.out.println("Daftar Semua Kendaraan");
+                int i = 0;
+                for (String vehicle : printKendaraan){
+                    i++;
+                    System.out.println(i+ ". " + vehicle);
+                }
+                break;       
                 case 2 :
                     in.nextLine();
                     System.out.println("Masukkan ID Kendaraan: ");
@@ -58,14 +74,17 @@ public class Main {
                     
                 break;
                 case 3 :
-                    System.out.println("Keluar dari program");
+                    in.nextLine();
+                    System.out.print("Ketik jenis kendaraan yang ingin Anda cari (Mobil/Motor/Truk/Bemo/Bus): "); String cari = in.nextLine();
+                    System.out.println("\n--- Kendaraan Tersedia (" + cari + ") ---");
+                    for (kendaraan k : inventaris) {
+                        if (k.isTersedia() && k.getClass().getSimpleName().equalsIgnoreCase(cari)) {
+                            k.tampilkanDetail();
+                        }else{
+                            System.out.println("Jenis/Data kendaraan tidak tersedia!");
+                        }
+                    }
                 break;
-                case 0 :
-                     System.out.println("Terima kasih! Program selesai.");
-                    break;
-
-                default:
-                    System.out.println("Pilihan tidak valid!");
             }
         } while (opsi != 0);
     }

@@ -13,4 +13,3 @@ public class Bus extends kendaraan{
         return fasilitasAC ? getBiayaHarian() * 0.15 : 0;
     }
 }
-
