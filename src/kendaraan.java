@@ -39,7 +39,7 @@ public abstract class kendaraan {
     public void tampilkanDetail() {
         System.out.println( "ID: " + this.id +
                             "\nNama: " + this.nama +
-                            "\nBiaya Harian: " + this.biayaHarian +
+                            "\nBiaya Harian: Rp" + this.biayaHarian +
                             "\nStatus: " + (this.tersedia ? "Tersedia" : "Tidak Tersedia"));
     }
 
