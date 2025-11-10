@@ -1,6 +1,6 @@
 package src;
-import java.util.Scanner;
 import java.util.ArrayList;
+import java.util.Scanner;
 
 public class Main {
     public static void main (String[] args) {
@@ -17,6 +17,14 @@ public class Main {
         kendaraan B1 = new bemo("B-001", "Hyundai", 10000, true, 300);
         kendaraan BS_1 = new Bus("Bus-0001", "Nisan", 750000, true, true);
 
+        inventaris.add(M1);
+        inventaris.add(M2);
+        inventaris.add(k1);
+        inventaris.add(k2);
+        inventaris.add(T1);
+        inventaris.add(B1);
+        inventaris.add(BS_1);
+
         int opsi = 0;
         do {
             System.out.println("Menu Persewaan Kendaraan");
@@ -27,18 +35,37 @@ public class Main {
             
             opsi = in.nextInt();
             switch (opsi){
-                case 0 :
-                    System.out.println("Keluar dari program");
-                break;
+                
                 case 1 :
-                    
                 break;
                 case 2 :
+                    in.nextLine();
+                    System.out.println("Masukkan ID Kendaraan: ");
+                    String id = in.nextLine();
+                    System.out.println("Masukkan jumlah hari sewa: ");
+                    int hari = in.nextInt();
+
+                    boolean found = false ;
+                    for (kendaraan kendaraan : inventaris) {
+                        if (kendaraan.getID().equalsIgnoreCase(id)) {
+                            found = true;
+                            System.out.println("biaya total untuk " + kendaraan.getID() + " selama " + hari + " hari adalah " + kendaraan.hitungBiayaTotal(hari));
+                        } 
+                    }
+                    if (!found) {
+                        System.out.println("Kendaraan dengan ID " + id + " tidak ditemukan.");
+                    }
                     
                 break;
                 case 3 :
                     System.out.println("Keluar dari program");
                 break;
+                case 0 :
+                     System.out.println("Terima kasih! Program selesai.");
+                    break;
+
+                default:
+                    System.out.println("Pilihan tidak valid!");
             }
         } while (opsi != 0);
     }
