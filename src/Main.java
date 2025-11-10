@@ -32,10 +32,20 @@ public class Main {
                     System.out.println("Keluar dari program");
                 break;
                 case 1 :
-                    for (int i=0; i<7; i++) {
-                        System.out.println(inventaris);
-                    }
-                break;
+                    ArrayList<String> printKendaraan = new ArrayList<>();
+                printKendaraan.add("Mobil");
+                printKendaraan.add("Motor");
+                printKendaraan.add("Truk");
+                printKendaraan.add("Bemo");
+                printKendaraan.add("Bus");
+
+                System.out.println("Daftar Semua Kendaraan");
+                int i = 0;
+                for (String vehicle : printKendaraan){
+                    i++;
+                    System.out.println(i+ ". " + vehicle);
+                }
+                break;       
                 case 2 :
                     
                 break;
