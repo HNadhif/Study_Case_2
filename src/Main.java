@@ -37,42 +37,38 @@ public class Main {
 
             switch (opsi){
                 case 0 :
-                     System.out.println("Terima kasih! Program selesai.");
+                    System.out.println("Terima kasih! Program selesai.");
                     break;
-                case 1 :
-                ArrayList<String> printKendaraan = new ArrayList<>();
-                printKendaraan.add("Mobil");
-                printKendaraan.add("Motor");
-                printKendaraan.add("Truk");
-                printKendaraan.add("Bemo");
-                printKendaraan.add("Bus");
 
-                System.out.println("Daftar Semua Kendaraan");
-                int i = 0;
-                for (String vehicle : printKendaraan){
-                    i++;
-                    System.out.println(i+ ". " + vehicle);
-                }
-                break;       
+                case 1 :
+                    System.out.println("\n--- Daftar Kendaraan ---");
+                    for (kendaraan k : inventaris) {
+                        k.tampilkanDetail();
+                        System.out.println();
+                    }
+                    System.out.println();
+                    break;
+
                 case 2 :
                     in.nextLine();
-                    System.out.println("Masukkan ID Kendaraan: ");
+                    System.out.print("Masukkan ID Kendaraan: ");
                     String id = in.nextLine();
-                    System.out.println("Masukkan jumlah hari sewa: ");
+                    System.out.print("Masukkan jumlah hari sewa: ");
                     int hari = in.nextInt();
 
-                    boolean found = false ;
+                    boolean found = false;
                     for (kendaraan kendaraan : inventaris) {
                         if (kendaraan.getID().equalsIgnoreCase(id)) {
                             found = true;
-                            System.out.println("biaya total untuk " + kendaraan.getID() + " selama " + hari + " hari adalah " + kendaraan.hitungBiayaTotal(hari));
+                            System.out.println("Biaya total untuk menyewa kendaraan dengan ID " + kendaraan.getID() + " selama " + hari + " hari adalah Rp" + kendaraan.hitungBiayaTotal(hari));
                         } 
                     }
                     if (!found) {
                         System.out.println("Kendaraan dengan ID " + id + " tidak ditemukan.");
                     }
-                    
-                break;
+                    System.out.println();
+                    break;
+
                 case 3 :
                     in.nextLine();
                     System.out.print("Ketik jenis kendaraan yang ingin Anda cari (Mobil/Motor/Truk/Bemo/Bus): "); String cari = in.nextLine();
@@ -80,11 +76,10 @@ public class Main {
                     for (kendaraan k : inventaris) {
                         if (k.isTersedia() && k.getClass().getSimpleName().equalsIgnoreCase(cari)) {
                             k.tampilkanDetail();
-                        }else{
-                            System.out.println("Jenis/Data kendaraan tidak tersedia!");
                         }
                     }
-                break;
+                    System.out.println();
+                    break;
             }
         } while (opsi != 0);
     }
