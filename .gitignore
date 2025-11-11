@@ -21,3 +21,5 @@ target/
 # Konfigurasi sistem atau OS
 .DS_Store
 Thumbs.db
+
+*.vpp.bak_*
