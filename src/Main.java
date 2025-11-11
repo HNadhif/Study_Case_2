@@ -24,6 +24,8 @@ public class Main {
         inventaris.add(T1);
         inventaris.add(B1);
         inventaris.add(BS_1);
+        
+        MenuUtama menu = new MenuUtama(inventaris);
 
         int opsi = 0;
         do {
@@ -38,55 +40,27 @@ public class Main {
             switch (opsi){
                 case 0 :
                     System.out.println("Terima kasih! Program selesai.");
-                    break;
-
+                break;
                 case 1 :
-                    System.out.println("\n--- Daftar Kendaraan ---");
-                    for (kendaraan k : inventaris) {
-                        k.tampilkanDetail();
-                        System.out.println();
-                    }
-                    System.out.println();
-                    break;
-
+                    menu.daftarKendaraan();
+                break;
                 case 2 :
                     in.nextLine();
                     System.out.print("Masukkan ID Kendaraan: ");
                     String id = in.nextLine();
                     System.out.print("Masukkan jumlah hari sewa: ");
                     int hari = in.nextInt();
-
-                    boolean found = false;
-                    for (kendaraan kendaraan : inventaris) {
-                        if (kendaraan.getID().equalsIgnoreCase(id)) {
-                            found = true;
-                            System.out.println("Biaya total untuk menyewa kendaraan dengan ID " + kendaraan.getID() + " selama " + hari + " hari adalah Rp" + kendaraan.hitungBiayaTotal(hari));
-                        } 
-                    }
-                    if (!found) {
-                        System.out.println("Kendaraan dengan ID " + id + " tidak ditemukan.");
-                    }
+                    System.out.println(menu.cekKendaraan(id,hari));
                     System.out.println();
-                    break;
-
+                break;
                 case 3 :
                     in.nextLine();
-                    boolean ditemukan = false;
                     System.out.print("Ketik jenis kendaraan yang ingin Anda cari (Mobil/Motor/Truk/Bemo/Bus): "); String cari = in.nextLine();
-                    System.out.println("\n--- Kendaraan Tersedia (" + cari + ") ---");
-                    for (kendaraan k : inventaris) {
-                        if (k.isTersedia() && k.getClass().getSimpleName().equalsIgnoreCase(cari)) {
-                            k.tampilkanDetail();
-                            ditemukan = true;
-                        }
-                    }
-
-                    if (!ditemukan) {
-                        System.out.println("Kendaraan yang anda pilih sedang kosong!");
-                    }
-
+                    menu.kendaraanTersedia(cari);
                     System.out.println();
-                    break;
+                break;
+                default :
+                    System.out.println("\nPilihan tidak ada di dalam menu, ulangi lagi!\n");
             }
         } while (opsi != 0);
     }
