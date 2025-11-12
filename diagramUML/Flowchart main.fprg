@@ -1,0 +1,58 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="4.2">
+    <attributes>
+        <attribute name="name" value="Flowchart main"/>
+        <attribute name="authors" value="Zaphire"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2025-11-12 09:35:13 PM"/>
+        <attribute name="created" value="WmFwaGlyZTtMQVBUT1AtTkxDQ1M2MjQ7MjAyNS0xMS0xMjswOToxNzo1OSBQTTszMDQ4"/>
+        <attribute name="edited" value="WmFwaGlyZTtMQVBUT1AtTkxDQ1M2MjQ7MjAyNS0xMS0xMjswOTozNToxMyBQTTsxOzMxNDY="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="opsi, hari" type="Integer" array="False" size=""/>
+            <declare name="id, cari" type="String" array="False" size=""/>
+            <assign variable="opsi" expression="1"/>
+            <comment text="Pembuatan objek inventaris dengan nama menu&#13;&#10;"/>
+            <comment text="Inisialisasi 7 objek kendaraan dan menyimpannya di objek inventaris"/>
+            <while expression="opsi != 0">
+                <output expression="&quot;===Menu===&quot;" newline="True"/>
+                <input variable="opsi"/>
+                <if expression="opsi == 0">
+                    <then>
+                        <assign variable="opsi" expression="0"/>
+                        <output expression="&quot;Program selesai&quot;" newline="True"/>
+                    </then>
+                    <else>
+                        <if expression="opsi == 1">
+                            <then>
+                                <output expression="&quot;Tampilkan semua kendaraan (panggil menu.daftarKendaraan())&quot;" newline="True"/>
+                            </then>
+                            <else>
+                                <if expression="opsi == 2">
+                                    <then>
+                                        <input variable="id"/>
+                                        <input variable="hari"/>
+                                        <output expression="&quot;Hitung biaya kendaraan dengan ID &quot; &amp; id &amp; &quot; untuk &quot; &amp; hari + &quot; hari (panggil menu.cekKendaraan(id, hari))&quot;" newline="True"/>
+                                    </then>
+                                    <else>
+                                        <if expression="opsi == 3">
+                                            <then>
+                                                <input variable="cari"/>
+                                                <output expression="&quot;Menampilkan kendaraan tersedia dengan jenis &quot; &amp; cari &amp; &quot; (panggil menu.kendaraanTersedia(cari))&quot;" newline="True"/>
+                                            </then>
+                                            <else>
+                                                <output expression="&quot;Input tidak dikenal&quot;" newline="True"/>
+                                            </else>
+                                        </if>
+                                    </else>
+                                </if>
+                            </else>
+                        </if>
+                    </else>
+                </if>
+            </while>
+        </body>
+    </function>
+</flowgorithm>
