@@ -15,4 +15,8 @@ public class mobil extends kendaraan {
     protected double hitungBiayaTambahan() {
         return (bensin? getBiayaHarian()*0.1 : 0);
     }
+
+    protected double hitungBiayaTambahan(int hari){
+        return 0;
+    }
 }

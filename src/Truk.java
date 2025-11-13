@@ -17,4 +17,9 @@ public class Truk extends kendaraan {
         return muatanMaks*50000;
     }
 
+    @Override
+    protected double hitungBiayaTambahan(int hari){
+        return 0;
+    }
+
 }

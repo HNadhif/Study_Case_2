@@ -8,6 +8,11 @@ public class motor extends kendaraan{
 
     @Override
     protected double hitungBiayaTambahan(){
-        return 20000;
+        return 0;
+    }
+
+    @Override
+    protected double hitungBiayaTambahan(int hari){
+        return hari*20000;
     }
 }

@@ -11,14 +11,13 @@ class MenuUtama {
         System.out.println("\n--- Daftar Kendaraan ---");
         for (kendaraan k : this.inventaris){
             k.tampilkanDetail();
-            System.out.println();
         }
-        System.out.println();
     }
-    public String cekKendaraan(String id,int hari){
+
+    public String cekKendaraan(String id, int hari){
         for (kendaraan k : this.inventaris){
             if (id.equalsIgnoreCase(k.getID())){
-                return "Biaya total untuk menyewa kendaraan dengan ID " + k.getID() + " selama " + hari + " hari adalah Rp" + k.hitungBiayaTotal(hari);
+                return "Biaya total untuk menyewa kendaraan dengan ID " + k.getID() + " selama " + hari + " hari adalah Rp" + (k.hitungBiayaTotal(hari)+k.hitungBiayaTambahan()+k.hitungBiayaTambahan(hari));
             }
         }
         return "Kendaraan dengan ID " + id + " tidak ditemukan.";
@@ -29,7 +28,6 @@ class MenuUtama {
         for (kendaraan k : inventaris){
             if (cari.equalsIgnoreCase(k.getClass().getSimpleName()) && k.isTersedia()){
                 k.tampilkanDetail();
-                System.out.println();
                 status = true;
             }
         }

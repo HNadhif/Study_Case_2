@@ -41,8 +41,10 @@ public abstract class kendaraan {
                             "\nNama: " + this.nama +
                             "\nBiaya Harian: Rp" + this.biayaHarian +
                             "\nStatus: " + (this.tersedia ? "Tersedia" : "Tidak Tersedia"));
+                            System.out.println();
     }
 
     // Method abstract
     protected abstract double hitungBiayaTambahan();
+    protected abstract double hitungBiayaTambahan(int hari);
 }

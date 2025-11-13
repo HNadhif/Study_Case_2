@@ -12,4 +12,9 @@ public class Bus extends kendaraan{
     protected double hitungBiayaTambahan() {
         return fasilitasAC ? getBiayaHarian() * 0.15 : 0;
     }
+
+    @Override
+    protected double hitungBiayaTambahan(int hari){
+        return 0;
+    }
 }
