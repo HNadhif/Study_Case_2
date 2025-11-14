@@ -11,9 +11,7 @@ class MenuUtama {
         System.out.println("\n--- Daftar Kendaraan ---");
         for (kendaraan k : this.inventaris){
             k.tampilkanDetail();
-            System.out.println();
         }
-        System.out.println();
     }
     public String cekKendaraan(String id,int hari){
         for (kendaraan k : this.inventaris){
