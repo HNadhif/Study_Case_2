@@ -13,11 +13,11 @@ class bemo extends kendaraan{
     }
 
     @Override
-    protected double hitungBiayaTambahan(int jarak){
-        if (jarak <= 0){
+    protected double hitungBiayaTambahan(int hari){
+        if (this.jarak <= 0){
             System.out.println("Jarak tidak boleh kurang dari sama dengan 0");
             return 0;
         }
-        return jarak*2000;
+        return this.jarak*2000;
     }
 }
