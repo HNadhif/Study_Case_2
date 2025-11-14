@@ -27,12 +27,12 @@ class MenuUtama {
         for (kendaraan k : inventaris){
             if (cari.equalsIgnoreCase(k.getClass().getSimpleName()) && k.isTersedia()){
                 k.tampilkanDetail();
-                System.out.println();
                 status = true;
             }
         }
         if (status == false){
             System.out.println("Kendaraan yang anda pilih tidak tersedia!");
+            System.out.println();
         }
     }
 }
