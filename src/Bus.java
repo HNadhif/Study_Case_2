@@ -1,6 +1,6 @@
 package src;
 
-public class Bus extends kendaraan{
+class Bus extends kendaraan{
     private boolean fasilitasAC;
 
     public Bus(String id, String nama, double biayaHarian, boolean tersedia, boolean fasilitasAC){
@@ -9,7 +9,7 @@ public class Bus extends kendaraan{
     }
 
     @Override
-    protected double hitungBiayaTambahan(int hari){
+    protected double hitungBiayaTambahan() {
         return fasilitasAC ? getBiayaHarian() * 0.15 : 0;
     }
 }

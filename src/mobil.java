@@ -1,6 +1,6 @@
 package src;
 
-public class mobil extends kendaraan {
+class mobil extends kendaraan {
     // Atribut
     private boolean bensin;
 
@@ -10,8 +10,9 @@ public class mobil extends kendaraan {
         this.bensin = bensin;
     }
 
+    // Method
     @Override
-    protected double hitungBiayaTambahan(int hari){
+    protected double hitungBiayaTambahan() {
         return (bensin? getBiayaHarian()*0.1 : 0);
     }
 }

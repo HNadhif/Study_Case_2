@@ -33,7 +33,7 @@ public abstract class kendaraan {
     }
 
     public double hitungBiayaTotal(int hari) {
-        return hari * this.biayaHarian;
+        return hari * this.biayaHarian + hitungBiayaTambahan();
     }
 
     public void tampilkanDetail() {
@@ -44,5 +44,5 @@ public abstract class kendaraan {
                             System.out.println();
     }
 
-    protected abstract double hitungBiayaTambahan(int hari);
+    protected abstract double hitungBiayaTambahan();
 }

@@ -1,6 +1,6 @@
 package src;
 
-public class Truk extends kendaraan {
+class Truk extends kendaraan {
     private double muatanMaks;
 
     public Truk(String id, String nama, double biayaHarian, boolean tersedia, double muatanMaks){
@@ -13,7 +13,7 @@ public class Truk extends kendaraan {
     }
 
     @Override
-    protected double hitungBiayaTambahan(int hari){
+    protected double hitungBiayaTambahan(){
         return muatanMaks*50000;
     }
 
