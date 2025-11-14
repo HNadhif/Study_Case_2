@@ -4,7 +4,7 @@ public abstract class kendaraan {
     // Atribut
     private String id;
     private String nama;
-    private double biayaHarian;
+    protected double biayaHarian;
     private boolean tersedia;
 
     // Constructor

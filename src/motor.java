@@ -10,4 +10,7 @@ class motor extends kendaraan{
     protected double hitungBiayaTambahan(){
         return 20000;
     }
+    public double hitungBiayaTotal(int hari) {
+        return hari * super.biayaHarian + hitungBiayaTambahan() * hari;
+    }
 }
