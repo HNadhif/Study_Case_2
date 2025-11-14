@@ -10,13 +10,8 @@ public class mobil extends kendaraan {
         this.bensin = bensin;
     }
 
-    // Method
     @Override
-    protected double hitungBiayaTambahan() {
-        return (bensin? getBiayaHarian()*0.1 : 0);
-    }
-
     protected double hitungBiayaTambahan(int hari){
-        return 0;
+        return (bensin? getBiayaHarian()*0.1 : 0);
     }
 }

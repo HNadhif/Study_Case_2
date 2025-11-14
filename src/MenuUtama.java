@@ -17,7 +17,7 @@ class MenuUtama {
     public String cekKendaraan(String id, int hari){
         for (kendaraan k : this.inventaris){
             if (id.equalsIgnoreCase(k.getID())){
-                return "Biaya total untuk menyewa kendaraan dengan ID " + k.getID() + " selama " + hari + " hari adalah Rp" + (k.hitungBiayaTotal(hari)+k.hitungBiayaTambahan()+k.hitungBiayaTambahan(hari));
+                return "Biaya total untuk menyewa kendaraan dengan ID " + k.getID() + " selama " + hari + " hari adalah Rp" + (k.hitungBiayaTotal(hari)+k.hitungBiayaTambahan(hari));
             }
         }
         return "Kendaraan dengan ID " + id + " tidak ditemukan.";

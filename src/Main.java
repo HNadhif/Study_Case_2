@@ -10,7 +10,7 @@ public class Main {
 
         // Membuat kendaraan sebanyak 7 objek
         kendaraan M1 = new mobil("MB-001", "Toyota Avanza", 250000, true, false);
-        kendaraan M2 = new mobil("MB-002", "Honda Jazz", 300000, true, true);
+        kendaraan M2 = new mobil("MB-002", "Honda Jazz", 300000, false, true);
         kendaraan k1 = new motor ("MT-001", "Yamaha NMAX", 100000, false);
         kendaraan k2 = new motor("MT-002", "Honda Beat", 85000, true);
         kendaraan T1 = new Truk("TR-001", "Isuzu Giga", 500000, false, 2);
@@ -57,7 +57,6 @@ public class Main {
                     in.nextLine();
                     System.out.print("Ketik jenis kendaraan yang ingin Anda cari (Mobil/Motor/Truk/Bemo/Bus): "); String cari = in.nextLine();
                     menu.kendaraanTersedia(cari);
-                    System.out.println();
                 break;
                 default :
                     System.out.println("\nPilihan tidak ada di dalam menu, ulangi lagi!\n");

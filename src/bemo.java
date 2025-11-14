@@ -11,18 +11,13 @@ class bemo extends kendaraan{
         super(idUnik, namaKendaraan, biayaHarian, ketersediaan);
         this.jarak = jarak;
     }
-    
+
     @Override
-    protected double hitungBiayaTambahan(){
+    protected double hitungBiayaTambahan(int jarak){
         if (jarak <= 0){
             System.out.println("Jarak tidak boleh kurang dari sama dengan 0");
             return 0;
         }
         return jarak*2000;
-    }
-
-    @Override
-    protected double hitungBiayaTambahan(int jarak){
-        return 0;
     }
 }

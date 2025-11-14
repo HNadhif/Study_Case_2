@@ -44,7 +44,5 @@ public abstract class kendaraan {
                             System.out.println();
     }
 
-    // Method abstract
-    protected abstract double hitungBiayaTambahan();
     protected abstract double hitungBiayaTambahan(int hari);
 }
